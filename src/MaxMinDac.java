@@ -15,19 +15,6 @@ public class MaxMinDac {
         System.out.println(res.get(maxString));
     }
 
-    // ModifiedApproach
-    /*
-     * The idea is to run a single loop, pick values in pairs and keep tracking
-     * minimum and maximum.
-     * Suppose we have updated the maximum and minimum till (i — 1)th index and
-     * stored them in max and min variables.
-     * In the next iteration, we consider a pair of values at ith and (i + 1)th
-     * indices and try to update max and min till (i + 1)th index.
-     * 
-     * If X[i] < X[i + 1], then X[i] will be the candidate for minimum, and X[i + 1]
-     * will be the candidate for maximum.
-     * So we compare X[i] with min and X[i + 1] with max and update both variables.
-     */
     private static Map<String, Integer> maxMin(int[] arr) {
         int min = arr[0];
         int max = arr[0];
