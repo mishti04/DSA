@@ -1,8 +1,9 @@
 public class MergeSort {
-    static int[] arr = new int[] { 5, 9, 3, 46, 36, 32, 11, 56, 4, 88 };
+    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88};
 
     public static void main(String[] args) {
-
+//Technically in both the merge sort examples, the function mergeSort is only responsible to decide in what way we want to split the array.
+// The actual sorting is technically done by the merge function.
         mergeSort(arr, 0, arr.length - 1);
         printArray(arr);
     }
@@ -34,11 +35,11 @@ public class MergeSort {
             if (q > end)
                 tempArr[k++] = arr[p++];
 
-            // check if 2nd part came to an end or not
+                // check if 2nd part came to an end or not
             else if (p > mid)
                 tempArr[k++] = arr[q++];
 
-            // If both have not come to an end, check which is smaller
+                // If both have not come to an end, check which is smaller
             else if (arr[p] < arr[q])
                 tempArr[k++] = arr[p++];
             else

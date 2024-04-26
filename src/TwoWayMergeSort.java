@@ -3,19 +3,28 @@ public class TwoWayMergeSort {
     static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 88, 81, 4};
 
     public static void main(String[] args) {
+        //Technically in both the merge sort examples, the function mergeSort is only responsible to decide in what way we want to split the array.
+        // The actual sorting is technically done by the merge function.
+        mergeSort(arr);
+        printArray(arr);
+    }
+
+    private static void mergeSort(int[] arr) {
         int chunkSize = 1;
         int arrLastIndex = arr.length - 1;
         while (chunkSize < arrLastIndex) {
             for (int i = 0; i < arrLastIndex; i = i + 2 * chunkSize) {
-                //If we dont have enough elements to make a full chunk, send whatever elements we have left as a chunk
+
+                //If we dont have enough elements to make a full chunk, 
+                //send whatever elements we have left as a chunk
                 if (i + 2 * chunkSize > arrLastIndex)
                     merge(arr, i, i + chunkSize - 1, arrLastIndex);
+
                 else
                     merge(arr, i, i + chunkSize - 1, i + 2 * chunkSize - 1);
             }
             chunkSize *= 2;
         }
-        printArray(arr);
     }
 
     private static void merge(int[] arr, int start, int mid, int end) {
@@ -45,6 +54,7 @@ public class TwoWayMergeSort {
             arr[j] = tempArr[t];
         }
     }
+
     private static void printArray(int[] arr) {
         // enhanced for loop
         for (int j : arr)
