@@ -1,29 +1,27 @@
 import java.util.Arrays;
 
 public class BubbleSort {
-    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88};
+    static int[] arr = new int[]{5, 1, 2, 3, 4, 6, 7, 8, 9};
+    //In this array only one element is out of place that too the first element.
+    //So it should stop running after the outer loop finishes 1 iteration
 
     public static void main(String[] args) {
         bubbleSort(arr);
         printArray(arr);
     }
 
-    private static void bubbleSort(int[] arr){
-        for(int i =0; i<arr.length; i++){
-            int[] tempArr = Arrays.copyOf(arr,arr.length);
-            boolean sameIteration = false;
-            for(int j=i+1; j<arr.length;j++){
-                if(arr[i]>arr[j])
+    private static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int[] tempArr = Arrays.copyOf(arr, arr.length);
+            boolean anySwaps = false;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
                     swap(arr, i, j);
-            }
-            for(int k =0; k<arr.length;k++){
-
-                if(arr[k]!=tempArr[k]) {
-                    sameIteration=true;
-                    break;
+                    anySwaps = true;
                 }
             }
-            if(sameIteration)
+            //Rther than checking the whole array, keeping a boolean flag is way better
+            if (!anySwaps)
                 break;
         }
     }
