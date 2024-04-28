@@ -1,5 +1,5 @@
 public class QuickSort {
-    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88};
+    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88,1};
 
     public static void main(String[] args) {
         quickSort(arr, 0, arr.length - 1);
@@ -24,7 +24,7 @@ public class QuickSort {
         //j keeps track of how many elements we have encountered that are smaller than pivot
         //k takes care of iterating though all the elements in the array
         int i = start, j = i;
-        for (int k = i + 1; k < end; k++) {
+        for (int k = i + 1; k <= end; k++) {
             if (arr[k] < p) {
                 j++;
                 swap(arr, k, j);
@@ -32,6 +32,7 @@ public class QuickSort {
             }
         }
         swap(arr, start,j);
+
         return j;
     }
 

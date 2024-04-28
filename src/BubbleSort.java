@@ -12,7 +12,6 @@ public class BubbleSort {
 
     private static void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            int[] tempArr = Arrays.copyOf(arr, arr.length);
             boolean anySwaps = false;
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -20,7 +19,6 @@ public class BubbleSort {
                     anySwaps = true;
                 }
             }
-            //Rther than checking the whole array, keeping a boolean flag is way better
             if (!anySwaps)
                 break;
         }
