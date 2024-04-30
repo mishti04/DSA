@@ -1,5 +1,5 @@
 public class HeapSort {
-    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88};
+    static int[] arr = new int[]{5, 9, 3, 46, 12, 98, 36, 32, 11, 56, 4, 88};
 
     public static void main(String[] args) {
         int n = arr.length - 1;
@@ -9,12 +9,16 @@ public class HeapSort {
     }
 
     private static void sortProcess(int[] arr, int n) {
-        for (int i = 0; i <= n; i++) {
-            swap(arr, 0, n - i);
-            heapify(arr, 0, n - i - 1);
+        for (int i = n; i >= 0; i--) {
+            //This swap signifies, we always take the root of the array which is nothing but the max element of the tree
+            // and move it towards the end of the array and consider that element sorted and never touch it again.
+            // Next time we heapify the tree, we only use the elements that are not sorted yet 
+            swap(arr, 0, i);
+            heapify(arr, 0, i - 1);
         }
     }
 
+    // virtual length only exists so we can ignore the elemts that are already sorted towards the end of the array
     private static void heapify(int[] arr, int i, int virtualLen) {
         if (i >= virtualLen)
             return;
@@ -31,7 +35,7 @@ public class HeapSort {
         }
 
     }
-    
+
     private static void createHeap(int[] arr, int n) {
 
         for (int i = n / 2; i >= 0; i--) {
