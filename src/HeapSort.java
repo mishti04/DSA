@@ -10,9 +10,9 @@ public class HeapSort {
 
     private static void sortProcess(int[] arr, int n) {
         for (int i = n; i >= 0; i--) {
-            //This swap signifies, we always take the root of the array which is nothing but the max element of the tree
+            // This swap signifies, we always take the root of the array which is nothing but the max element of the tree
             // and move it towards the end of the array and consider that element sorted and never touch it again.
-            // Next time we heapify the tree, we only use the elements that are not sorted yet 
+            // Next time we heapify the tree, we only use the elements that are not sorted yet
             swap(arr, 0, i);
             heapify(arr, 0, i - 1);
         }
@@ -37,7 +37,8 @@ public class HeapSort {
     }
 
     private static void createHeap(int[] arr, int n) {
-
+        // create a heap by heapifying all nodes that have children, starting from the end
+        // ignore all the nodes with no children to reduce time from nlogn to n
         for (int i = n / 2; i >= 0; i--) {
             heapify(arr, i, n);
         }
