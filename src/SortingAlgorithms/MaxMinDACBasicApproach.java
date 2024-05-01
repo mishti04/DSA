@@ -1,3 +1,5 @@
+package SortingAlgorithms;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +13,7 @@ public class MaxMinDACBasicApproach {
 
     public static void main(String[] args) {
         int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88};
-        Map<String, Integer> res = maxMin(arr, 0, arr.length-1);
+        Map<String, Integer> res = maxMin(arr, 0, arr.length - 1);
         System.out.println(res.get(minString));
         System.out.println(res.get(maxString));
     }

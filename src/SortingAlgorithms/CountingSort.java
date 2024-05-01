@@ -1,3 +1,5 @@
+package SortingAlgorithms;
+
 import java.util.Arrays;
 
 public class CountingSort {
@@ -28,7 +30,7 @@ public class CountingSort {
 
         //sort and populate the original array
         res = new int[arr.length];
-        for (int i = arr.length-1; i >= 0; i--) {
+        for (int i = arr.length - 1; i >= 0; i--) {
             res[tempArr[arr[i]] - 1] = arr[i];
             tempArr[arr[i]]--;
         }

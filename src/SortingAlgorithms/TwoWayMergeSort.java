@@ -1,10 +1,9 @@
+package SortingAlgorithms;
 //                                                  2 way merge sort or binary sort
 public class TwoWayMergeSort {
     static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 88, 81, 4};
 
     public static void main(String[] args) {
-        //Technically in both the merge sort examples, the function mergeSort is only responsible to decide in what way we want to split the array.
-        // The actual sorting is technically done by the merge function.
         mergeSort(arr);
         printArray(arr);
     }
@@ -19,7 +18,6 @@ public class TwoWayMergeSort {
                 //send whatever elements we have left as a chunk
                 if (i + 2 * chunkSize > arrLastIndex)
                     merge(arr, i, i + chunkSize - 1, arrLastIndex);
-
                 else
                     merge(arr, i, i + chunkSize - 1, i + 2 * chunkSize - 1);
             }
@@ -54,7 +52,6 @@ public class TwoWayMergeSort {
             arr[j] = tempArr[t];
         }
     }
-
     private static void printArray(int[] arr) {
         // enhanced for loop
         for (int j : arr)

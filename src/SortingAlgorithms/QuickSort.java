@@ -1,5 +1,7 @@
+package SortingAlgorithms;
+
 public class QuickSort {
-    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88,1};
+    static int[] arr = new int[]{5, 9, 3, 46, 36, 32, 11, 56, 4, 88, 1};
 
     public static void main(String[] args) {
         quickSort(arr, 0, arr.length - 1);
@@ -31,7 +33,7 @@ public class QuickSort {
 
             }
         }
-        swap(arr, start,j);
+        swap(arr, start, j);
 
         return j;
     }

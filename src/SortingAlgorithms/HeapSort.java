@@ -1,3 +1,5 @@
+package SortingAlgorithms;
+
 public class HeapSort {
     static int[] arr = new int[]{5, 9, 3, 46, 12, 98, 36, 32, 11, 56, 4, 88};
 
